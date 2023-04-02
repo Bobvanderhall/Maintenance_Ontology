@@ -1,0 +1,516 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.co-ode.org/ontologies/ont.owl#containsAsset
+<http://www.co-ode.org/ontologies/ont.owl#containsAsset> rdf:type owl:ObjectProperty ;
+                                                         rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Room> ;
+                                                         rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Asset> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#containsRoom
+<http://www.co-ode.org/ontologies/ont.owl#containsRoom> rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Storey> ;
+                                                        rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Room> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasCause
+<http://www.co-ode.org/ontologies/ont.owl#hasCause> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Order> ;
+                                                    rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Cause> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasDamagePicture
+<http://www.co-ode.org/ontologies/ont.owl#hasDamagePicture> rdf:type owl:ObjectProperty ;
+                                                            rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Order> ;
+                                                            rdfs:range <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasDiscipline
+<http://www.co-ode.org/ontologies/ont.owl#hasDiscipline> rdf:type owl:ObjectProperty ;
+                                                         rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Order> ;
+                                                         rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Dicipline> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasMeasure
+<http://www.co-ode.org/ontologies/ont.owl#hasMeasure> rdf:type owl:ObjectProperty ;
+                                                      rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Order> ;
+                                                      rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Measure> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#relatedTo
+<http://www.co-ode.org/ontologies/ont.owl#relatedTo> rdf:type owl:ObjectProperty ;
+                                                     rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Order> ;
+                                                     rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Asset> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#takesPlaceIn
+<http://www.co-ode.org/ontologies/ont.owl#takesPlaceIn> rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Order> ;
+                                                        rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Room> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasAssetNumber
+<http://www.co-ode.org/ontologies/ont.owl#hasAssetNumber> rdf:type owl:DatatypeProperty ;
+                                                          rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Asset> ;
+                                                          rdfs:range xsd:int .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasCauseText
+<http://www.co-ode.org/ontologies/ont.owl#hasCauseText> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Order> ;
+                                                        rdfs:range xsd:string .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasDamagePictureText
+<http://www.co-ode.org/ontologies/ont.owl#hasDamagePictureText> rdf:type owl:DatatypeProperty ;
+                                                                rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Order> ;
+                                                                rdfs:range xsd:string .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasElementID
+<http://www.co-ode.org/ontologies/ont.owl#hasElementID> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Asset> ;
+                                                        rdfs:range xsd:int .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasMeasureDateTime
+<http://www.co-ode.org/ontologies/ont.owl#hasMeasureDateTime> rdf:type owl:DatatypeProperty ;
+                                                              rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Measure> ;
+                                                              rdfs:range xsd:dateTime .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasMeasureNumber
+<http://www.co-ode.org/ontologies/ont.owl#hasMeasureNumber> rdf:type owl:DatatypeProperty ;
+                                                            rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Measure> ;
+                                                            rdfs:range xsd:int .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasMeasureText
+<http://www.co-ode.org/ontologies/ont.owl#hasMeasureText> rdf:type owl:DatatypeProperty ;
+                                                          rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Measure> ;
+                                                          rdfs:range xsd:string .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasNotificationDateTime
+<http://www.co-ode.org/ontologies/ont.owl#hasNotificationDateTime> rdf:type owl:DatatypeProperty ;
+                                                                   rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Order> ;
+                                                                   rdfs:range xsd:dateTime .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasNotificationText
+<http://www.co-ode.org/ontologies/ont.owl#hasNotificationText> rdf:type owl:DatatypeProperty ;
+                                                               rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Order> ;
+                                                               rdfs:range xsd:string .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasOrderDescription
+<http://www.co-ode.org/ontologies/ont.owl#hasOrderDescription> rdf:type owl:DatatypeProperty ;
+                                                               rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Order> ;
+                                                               rdfs:range xsd:string .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasOrderNumber
+<http://www.co-ode.org/ontologies/ont.owl#hasOrderNumber> rdf:type owl:DatatypeProperty ;
+                                                          rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Order> ;
+                                                          rdfs:range xsd:string .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasOrderStatus
+<http://www.co-ode.org/ontologies/ont.owl#hasOrderStatus> rdf:type owl:DatatypeProperty ;
+                                                          rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Order> ;
+                                                          rdfs:range xsd:string .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasRoomNumber
+<http://www.co-ode.org/ontologies/ont.owl#hasRoomNumber> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Room> ;
+                                                         rdfs:range xsd:int .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.co-ode.org/ontologies/ont.owl#Acces_Problem
+<http://www.co-ode.org/ontologies/ont.owl#Acces_Problem> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Activated_Alarm_Signal
+<http://www.co-ode.org/ontologies/ont.owl#Activated_Alarm_Signal> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Additional_Work
+<http://www.co-ode.org/ontologies/ont.owl#Additional_Work> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Measure> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Adjustment
+<http://www.co-ode.org/ontologies/ont.owl#Adjustment> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Measure> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Architectural
+<http://www.co-ode.org/ontologies/ont.owl#Architectural> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Dicipline> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Architectural_Fire_Safety
+<http://www.co-ode.org/ontologies/ont.owl#Architectural_Fire_Safety> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Dicipline> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Assembly
+<http://www.co-ode.org/ontologies/ont.owl#Assembly> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Cause> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Asset
+<http://www.co-ode.org/ontologies/ont.owl#Asset> rdf:type owl:Class .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Asset_Failure
+<http://www.co-ode.org/ontologies/ont.owl#Asset_Failure> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Asset_Out_of_Contract
+<http://www.co-ode.org/ontologies/ont.owl#Asset_Out_of_Contract> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Cause> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#BOEI
+<http://www.co-ode.org/ontologies/ont.owl#BOEI> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Measure> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Cause
+<http://www.co-ode.org/ontologies/ont.owl#Cause> rdf:type owl:Class .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Change_of_Priority
+<http://www.co-ode.org/ontologies/ont.owl#Change_of_Priority> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Measure> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Cleaning
+<http://www.co-ode.org/ontologies/ont.owl#Cleaning> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Measure> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Climate
+<http://www.co-ode.org/ontologies/ont.owl#Climate> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Dicipline> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Communication_Audio_Video_Problem
+<http://www.co-ode.org/ontologies/ont.owl#Communication_Audio_Video_Problem> rdf:type owl:Class ;
+                                                                             rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Complaint
+<http://www.co-ode.org/ontologies/ont.owl#Complaint> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Order> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Controll
+<http://www.co-ode.org/ontologies/ont.owl#Controll> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Cause> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Cracking
+<http://www.co-ode.org/ontologies/ont.owl#Cracking> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#DamagePicture
+<http://www.co-ode.org/ontologies/ont.owl#DamagePicture> rdf:type owl:Class .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Damage_Molest
+<http://www.co-ode.org/ontologies/ont.owl#Damage_Molest> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Degradation
+<http://www.co-ode.org/ontologies/ont.owl#Degradation> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Cause> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Design
+<http://www.co-ode.org/ontologies/ont.owl#Design> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Cause> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Dicipline
+<http://www.co-ode.org/ontologies/ont.owl#Dicipline> rdf:type owl:Class .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Drainage_Problem
+<http://www.co-ode.org/ontologies/ont.owl#Drainage_Problem> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Electrical
+<http://www.co-ode.org/ontologies/ont.owl#Electrical> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Dicipline> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Electrical_Problem
+<http://www.co-ode.org/ontologies/ont.owl#Electrical_Problem> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Emergency_Solution
+<http://www.co-ode.org/ontologies/ont.owl#Emergency_Solution> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Measure> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#FireAlarm_Evacuation
+<http://www.co-ode.org/ontologies/ont.owl#FireAlarm_Evacuation> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Dicipline> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Humidity_Problem
+<http://www.co-ode.org/ontologies/ont.owl#Humidity_Problem> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Info-Request
+<http://www.co-ode.org/ontologies/ont.owl#Info-Request> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Order> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Instruction
+<http://www.co-ode.org/ontologies/ont.owl#Instruction> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Measure> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Knowledge
+<http://www.co-ode.org/ontologies/ont.owl#Knowledge> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Cause> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Leakage
+<http://www.co-ode.org/ontologies/ont.owl#Leakage> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Lift_Transport_Problem
+<http://www.co-ode.org/ontologies/ont.owl#Lift_Transport_Problem> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Lighting_Problem
+<http://www.co-ode.org/ontologies/ont.owl#Lighting_Problem> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Lubrication
+<http://www.co-ode.org/ontologies/ont.owl#Lubrication> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Measure> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Malfunction
+<http://www.co-ode.org/ontologies/ont.owl#Malfunction> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Order> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Measure
+<http://www.co-ode.org/ontologies/ont.owl#Measure> rdf:type owl:Class .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Moist_Problem
+<http://www.co-ode.org/ontologies/ont.owl#Moist_Problem> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Molest
+<http://www.co-ode.org/ontologies/ont.owl#Molest> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Cause> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Nature
+<http://www.co-ode.org/ontologies/ont.owl#Nature> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Cause> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#No_Particularities
+<http://www.co-ode.org/ontologies/ont.owl#No_Particularities> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Cause> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Noise_Disturbance
+<http://www.co-ode.org/ontologies/ont.owl#Noise_Disturbance> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Not_Resolved
+<http://www.co-ode.org/ontologies/ont.owl#Not_Resolved> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Measure> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Operating_Problem
+<http://www.co-ode.org/ontologies/ont.owl#Operating_Problem> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Order
+<http://www.co-ode.org/ontologies/ont.owl#Order> rdf:type owl:Class .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Perception
+<http://www.co-ode.org/ontologies/ont.owl#Perception> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Cause> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Pollution
+<http://www.co-ode.org/ontologies/ont.owl#Pollution> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Cause> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Pollution_Problem
+<http://www.co-ode.org/ontologies/ont.owl#Pollution_Problem> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Preventive
+<http://www.co-ode.org/ontologies/ont.owl#Preventive> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Order> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Production_Error
+<http://www.co-ode.org/ontologies/ont.owl#Production_Error> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Cause> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Project_Malfunction
+<http://www.co-ode.org/ontologies/ont.owl#Project_Malfunction> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Cause> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Repair
+<http://www.co-ode.org/ontologies/ont.owl#Repair> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Measure> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Replacement
+<http://www.co-ode.org/ontologies/ont.owl#Replacement> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Measure> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Reset
+<http://www.co-ode.org/ontologies/ont.owl#Reset> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Measure> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Returned_Notification
+<http://www.co-ode.org/ontologies/ont.owl#Returned_Notification> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Measure> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Room
+<http://www.co-ode.org/ontologies/ont.owl#Room> rdf:type owl:Class .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Sequerity
+<http://www.co-ode.org/ontologies/ont.owl#Sequerity> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Dicipline> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Setting
+<http://www.co-ode.org/ontologies/ont.owl#Setting> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Measure> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Settings
+<http://www.co-ode.org/ontologies/ont.owl#Settings> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Cause> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Smell_Nuisance
+<http://www.co-ode.org/ontologies/ont.owl#Smell_Nuisance> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Sprinkler
+<http://www.co-ode.org/ontologies/ont.owl#Sprinkler> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Dicipline> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Storey
+<http://www.co-ode.org/ontologies/ont.owl#Storey> rdf:type owl:Class .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Subsidence
+<http://www.co-ode.org/ontologies/ont.owl#Subsidence> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Sunblind_Problem
+<http://www.co-ode.org/ontologies/ont.owl#Sunblind_Problem> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Supply
+<http://www.co-ode.org/ontologies/ont.owl#Supply> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Cause> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Supply_Problem
+<http://www.co-ode.org/ontologies/ont.owl#Supply_Problem> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Transport
+<http://www.co-ode.org/ontologies/ont.owl#Transport> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Dicipline> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Unpleasantly_Cold
+<http://www.co-ode.org/ontologies/ont.owl#Unpleasantly_Cold> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Unpleasantly_Warm
+<http://www.co-ode.org/ontologies/ont.owl#Unpleasantly_Warm> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Use
+<http://www.co-ode.org/ontologies/ont.owl#Use> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Cause> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Ventilation_Problem
+<http://www.co-ode.org/ontologies/ont.owl#Ventilation_Problem> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Window_Damage
+<http://www.co-ode.org/ontologies/ont.owl#Window_Damage> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DamagePicture> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Wish
+<http://www.co-ode.org/ontologies/ont.owl#Wish> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Order> .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
